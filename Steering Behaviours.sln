@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Steering Behaviours", "Steering Behaviours\Steering Behaviours.vcxproj", "{1BA2A847-557A-4733-8ABD-3860E7640963}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Debug|x64.ActiveCfg = Debug|x64
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Debug|x64.Build.0 = Debug|x64
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Debug|x86.ActiveCfg = Debug|Win32
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Debug|x86.Build.0 = Debug|Win32
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Release|x64.ActiveCfg = Release|x64
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Release|x64.Build.0 = Release|x64
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Release|x86.ActiveCfg = Release|Win32
+		{1BA2A847-557A-4733-8ABD-3860E7640963}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E4F1EF5-6E08-43B1-BE3C-807F1499B242}
+	EndGlobalSection
+EndGlobal

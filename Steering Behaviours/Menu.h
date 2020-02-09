@@ -2,12 +2,17 @@
 #include "GameState.h"
 #include "GameStateManager.h"
 #include "Sprite.h"
+#include "Vehicle.h"
+#include "Vector2.h"
+
 class Menu : public GameState {
 
 	private:
 		Platform* platform;														//Pointer to platform
 		Sprite* background;														//Background image for the state
 		GameStateManager* manager;												//Pointer to the manager
+		Vehicle* seek;
+		Vector2 target;
 
 	public:
 		Menu();																	//Constructor

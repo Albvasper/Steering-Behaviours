@@ -2,7 +2,7 @@
 #include <iostream>
 
 GameStateManager::GameStateManager() {
-	platform = new Platform("Match4!");
+	platform = new Platform("Steering Behaviours!");
 }
 
 void GameStateManager::GameLoop() {

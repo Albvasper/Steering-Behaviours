@@ -2,8 +2,11 @@
 #include <vector>
 #include "GameObject.h"
 #include "Vector2.h"
+#include "Sprite.h"
+#include "Platform.h"
 
 class Vehicle : GameObject {
+
 	private:
 		/*std::vector<int> position;
 		std::vector<int> velocity;
@@ -22,12 +25,15 @@ class Vehicle : GameObject {
 		float maxForce;
 		int targetX;
 		int targetY;
+		Platform* platform;
+		Sprite* sprite;
 
 	public:
-		Vehicle(){}
-		Vehicle(float x, float y);
-		void seek(Vector2 _target);
-		void applyForce(Vector2 v);
+		Vehicle();
+		void Init(float x, float y, Platform* _platform);
+		void Seek(Vector2 _target);
+		void ApplyForce(Vector2 v);
 		void Update();
+		void Draw(short _x, short _y);
 };
 

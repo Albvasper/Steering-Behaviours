@@ -41,3 +41,11 @@ Vector2 Vector2::limit(Vector2 v, int n)
 	return v;
 }
 
+float Vector2::GetPosX() {
+	return x;
+}
+
+float Vector2::GetPosY() {
+	return y;
+}
+

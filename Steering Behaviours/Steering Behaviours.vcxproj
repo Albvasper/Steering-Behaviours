@@ -27,6 +27,7 @@
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +39,7 @@
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -112,9 +114,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Tareas\Septimo\Steering-Behaviours\ExternalLibs\sdl2\include;C:\Tareas\Septimo\Steering-Behaviours\ExternalLibs\SDL2_image\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>C:\Tareas\Septimo\Steering-Behaviours\ExternalLibs\sdl2\lib\x64;C:\Tareas\Septimo\Steering-Behaviours\ExternalLibs\SDL2_image\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

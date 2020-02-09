@@ -4,6 +4,7 @@
 #include "Sprite.h"
 #include "Vehicle.h"
 #include "Vector2.h"
+#include "Target.h"
 
 class Menu : public GameState {
 
@@ -12,7 +13,8 @@ class Menu : public GameState {
 		Sprite* background;														//Background image for the state
 		GameStateManager* manager;												//Pointer to the manager
 		Vehicle* agent;
-		Vector2 target;
+		Target* target;
+		//Vector2 target;
 
 	public:
 		Menu();																	//Constructor

@@ -1,6 +1,5 @@
 #include "Vehicle.h"
 
-
 Vehicle::Vehicle() {
 }
 
@@ -18,11 +17,14 @@ void Vehicle::Init(float x, float y, Platform* _platform) {
 
 void Vehicle::Seek(Vector2 _target) {
 	Vector2 desired = desired.sub(_target, position);
-
 	desired = desired.normalize(desired);
 	desired = desired.mult(desired, maxSpeed);
 	Vector2 steer = steer.sub(desired, velocity);
 	ApplyForce(steer);
+}
+
+void Vehicle::Evading(Vector2 _target) {
+	
 }
 
 void Vehicle::ApplyForce(Vector2 v) {

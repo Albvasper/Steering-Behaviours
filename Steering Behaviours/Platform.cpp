@@ -54,6 +54,7 @@ void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 	SDL_Event e;
 	bool leftMouseButtonDown = false;
 	while (SDL_PollEvent(&e)) {
+		//Allways updates the mouse position
 		mouseX = e.motion.x;
 		mouseY = e.motion.y;
 		if (e.type == SDL_KEYDOWN) {
@@ -62,13 +63,13 @@ void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 		else if (e.type == SDL_MOUSEBUTTONUP) {
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				leftMouseButtonDown = false;
-				std::cout << "arriba" << std::endl;
+				//std::cout << "arriba" << std::endl;
 			}
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) {
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				leftMouseButtonDown = true;
-				std::cout << "abajo" << std::endl;
+				//std::cout << "abajo" << std::endl;
 			}
 		}
 	}

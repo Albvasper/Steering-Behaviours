@@ -27,6 +27,7 @@
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Target.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vehicle.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Target.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vehicle.h" />

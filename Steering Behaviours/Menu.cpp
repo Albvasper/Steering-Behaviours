@@ -22,7 +22,7 @@ void Menu::Draw() {
 bool Menu::Input(int keyInput) {
 	//If ENTER is pressed
 	if (keyInput == 27) {
-		//Quit
+		//Quittt
 		exit(1);
 	}
 	else {

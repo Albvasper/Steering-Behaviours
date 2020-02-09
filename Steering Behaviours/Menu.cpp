@@ -11,14 +11,11 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	agent->Init(500, 500, platform);
 	target = new Target();
 	target->Init(platform);
-	/*target = Vector2(960, 540);
-	agent->Init(0, 0, platform);*/
-	
 }
 
 void Menu::Draw() {
 	platform->RenderClear();
-	agent->Draw(agent->GetPosX(), agent->GetPosY());
+	agent->Draw();
 	platform->RenderPresent();
 }
 

@@ -35,7 +35,7 @@ class Vehicle : GameObject {
 		void Evading(Vector2 _target);
 		void ApplyForce(Vector2 v);
 		void Update();
-		void Draw(short _x, short _y);
+		void Draw();
 		int GetPosX();
 		int GetPosY();
 };

@@ -38,8 +38,8 @@ void Vehicle::Update() {
 	acceleration = acceleration.mult(acceleration, 0);
 }
 
-void Vehicle::Draw(short _x, short _y) {
-	platform->RenderSprite(sprite, position.GetPosX(), position.GetPosY(), 0);
+void Vehicle::Draw() {
+	platform->RenderSprite(sprite, position.GetPosX() - 32, position.GetPosY() - 32 , 0);
 }
 
 int Vehicle::GetPosX() {

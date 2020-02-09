@@ -54,6 +54,8 @@ void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 	SDL_Event e;
 	bool leftMouseButtonDown = false;
 	while (SDL_PollEvent(&e)) {
+		mouseX = e.motion.x;
+		mouseY = e.motion.y;
 		if (e.type == SDL_KEYDOWN) {
 			(obj->*f)(e.key.keysym.sym);
 		}
@@ -70,6 +72,14 @@ void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 			}
 		}
 	}
+}
+
+int Platform::GetMouseX() {
+	return mouseX;
+}
+
+int Platform::GetMouseY() {
+	return mouseY;
 }
 
 Platform::~Platform() {

@@ -13,6 +13,8 @@ class Platform {
 		int width;														//Width of the window 
 		int height;														//Height of the window
 		SDL_Window* window;												//Pointer to SDL window
+		int mouseX;
+		int mouseY;
 
 	public:
 		static SDL_Renderer* renderer;									//Pointer to the SDL renderer
@@ -22,5 +24,7 @@ class Platform {
 		void RenderTexture(Sprite* sprite, int x, int y, double a);
 		void RenderPresent();											//Method that updates the screen with any rendering performed
 		void CheckEvent(GameState* obj, bool (GameState::* f)(int));	//Method that always checks the events that are happening
+		int GetMouseX();
+		int GetMouseY();
 		~Platform();													//Destructor
 };

@@ -8,8 +8,8 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	this->platform = platform;
 	this->manager = manager;
 	agent = new Vehicle();
-	target = Vector2(20, 52);
-	agent->Init(500, 510, platform);
+	target = Vector2(960, 540);
+	agent->Init(0, 0, platform);
 	agent->Seek(target);
 }
 
@@ -22,7 +22,7 @@ void Menu::Draw() {
 bool Menu::Input(int keyInput) {
 	//If ENTER is pressed
 	if (keyInput == 27) {
-		//Quittt
+		//Quit
 		exit(1);
 	}
 	else {

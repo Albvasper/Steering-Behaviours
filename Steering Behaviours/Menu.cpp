@@ -7,15 +7,15 @@ Menu::Menu() {
 void Menu::Init(Platform* platform, GameStateManager* manager) {
 	this->platform = platform;
 	this->manager = manager;
-	seek = new Vehicle();
+	agent = new Vehicle();
 	target = Vector2(20, 52);
-	seek->Init(500, 510, platform);
-	seek->Seek(target);
+	agent->Init(500, 510, platform);
+	agent->Seek(target);
 }
 
 void Menu::Draw() {
 	platform->RenderClear();
-	seek->Draw(seek->posX, seek->posY);
+	agent->Draw(agent->GetPosX(), agent->GetPosY());
 	platform->RenderPresent();
 }
 
@@ -32,7 +32,7 @@ bool Menu::Input(int keyInput) {
 }
 
 void Menu::Update() {
-	seek->Update();
+	agent->Update();
 }
 
 void Menu::Close() {

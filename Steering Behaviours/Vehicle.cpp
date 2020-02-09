@@ -39,3 +39,11 @@ void Vehicle::Update() {
 void Vehicle::Draw(short _x, short _y) {
 	platform->RenderSprite(sprite, position.GetPosX(), position.GetPosY(), 0);
 }
+
+int Vehicle::GetPosX() {
+	return posX;
+}
+
+int Vehicle::GetPosY() {
+	return posY;
+}

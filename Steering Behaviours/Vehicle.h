@@ -7,7 +7,7 @@
 
 class Vehicle : GameObject {
 
-	public:
+	private:
 		/*std::vector<int> position;
 		std::vector<int> velocity;
 		std::vector<int> acceleration;*/	
@@ -35,5 +35,7 @@ class Vehicle : GameObject {
 		void ApplyForce(Vector2 v);
 		void Update();
 		void Draw(short _x, short _y);
+		int GetPosX();
+		int GetPosY();
 };
 

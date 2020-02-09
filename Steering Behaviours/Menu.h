@@ -11,7 +11,7 @@ class Menu : public GameState {
 		Platform* platform;														//Pointer to platform
 		Sprite* background;														//Background image for the state
 		GameStateManager* manager;												//Pointer to the manager
-		Vehicle* seek;
+		Vehicle* agent;
 		Vector2 target;
 
 	public:

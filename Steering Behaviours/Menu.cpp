@@ -8,14 +8,14 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	this->platform = platform;
 	this->manager = manager;
 	seek = new Vehicle();
-	target = Vector2(50, 50);
-	seek->Init(50, 50, platform);
+	target = Vector2(20, 52);
+	seek->Init(500, 510, platform);
 	seek->Seek(target);
 }
 
 void Menu::Draw() {
 	platform->RenderClear();
-	seek->Draw(50, 50);
+	seek->Draw(seek->posX, seek->posY);
 	platform->RenderPresent();
 }
 

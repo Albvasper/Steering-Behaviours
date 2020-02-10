@@ -15,7 +15,8 @@ class Vector2 {
 		Vector2 add(Vector2 _f, Vector2 _l);
 		Vector2 mult(Vector2 v, int n);
 		Vector2 limit(Vector2 v, int n);
-		float Mag();
+		Vector2 setMag(float n);
+		float Mag(Vector2 v);
 		float GetPosX();
 		float GetPosY();
 		~Vector2(){ }

@@ -33,19 +33,22 @@ void Vehicle::Flee(Vector2 _target) {
 
 void Vehicle::Arrival(Vector2 _target) {
 	Vector2 desired = desired.sub(_target, position);
-	float distance = desired.Mag();
+	float distance = desired.Mag(desired);
+	//loat var = distance / 100;
 	if (distance < 100) {
 		desired = desired.normalize(desired);
 		desired = desired.mult(desired, maxSpeed);
-		float var = distance / 100;
-		desired = desired.mult(desired, var);
+		desired = desired.mult(desired, distance/100);
 	}
 	else{
 		desired = desired.normalize(desired);
 		desired = desired.mult(desired, maxSpeed);
+		//steer = steer.sub(desired, velocity);
 	}
+	
 	Vector2 steer = steer.sub(desired, velocity);
 	ApplyForce(steer);
+
 }
 
 void Vehicle::ApplyForce(Vector2 v) {

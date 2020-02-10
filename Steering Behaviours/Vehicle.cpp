@@ -58,6 +58,16 @@ void Vehicle::Pursuit(Vehicle target) {
 	Seek(target.GetPos());
 }
 
+void Vehicle::Evade(Vehicle target) {
+	float distance = Distance(target.GetPos(), position);
+	float ahead = distance / 10;
+	Vector2 futurePosition = velocity;
+	futurePosition = futurePosition.normalize(futurePosition);
+	futurePosition = futurePosition.add(target.GetPos(), target.GetVel());
+	futurePosition = futurePosition.mult(futurePosition, ahead);
+	Flee(target.GetPos());
+}
+
 void Vehicle::ApplyForce (Vector2 v) {
 	acceleration = acceleration.add(v, acceleration);
 }

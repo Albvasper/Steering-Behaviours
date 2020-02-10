@@ -12,7 +12,7 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	target = new Target();
 	target->Init(platform);
 	agentP = new Vehicle();
-	agentP->Init(300, 300, platform);
+	agentP->Init(600, 600, platform);
 }
 
 void Menu::Draw() {
@@ -38,7 +38,7 @@ void Menu::Update() {
 	agent->Update();
 	agent->Arrival(target->GetPos());
 	agentP->Update();
-	agentP->Pursuit(*agent);
+	agentP->Evade(*agent);
 	target->Update();
 }
 

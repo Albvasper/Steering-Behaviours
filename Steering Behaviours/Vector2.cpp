@@ -41,6 +41,14 @@ Vector2 Vector2::limit(Vector2 v, int n)
 	return v;
 }
 
+float Vector2::Mag() {
+	x = pow(x, 2);
+	y = pow(y, 2);
+	float result = x + y;
+	result = sqrt(result);
+	return result;
+}
+
 float Vector2::GetPosX() {
 	return x;
 }

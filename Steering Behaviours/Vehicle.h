@@ -34,6 +34,7 @@ class Vehicle : GameObject {
 		void Init(float x, float y, Platform* _platform);
 		void Seek(Vector2 _target);
 		void Flee(Vector2 _target);
+		void Arrival(Vector2 _target);
 		void ApplyForce(Vector2 v);
 		void Update();
 		void Draw();

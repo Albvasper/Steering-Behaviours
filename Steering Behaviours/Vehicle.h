@@ -35,7 +35,11 @@ class Vehicle : GameObject {
 		void Seek(Vector2 _target);
 		void Flee(Vector2 _target);
 		void Arrival(Vector2 _target);
+		void Pursuit(Vehicle target);
+		float Distance(Vector2 v1, Vector2 v2);
 		void ApplyForce(Vector2 v);
+		Vector2 GetPos();
+		Vector2 GetVel();
 		void Update();
 		void Draw();
 		int GetPosX();

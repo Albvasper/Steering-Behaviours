@@ -34,25 +34,40 @@ void Vehicle::Flee(Vector2 _target) {
 void Vehicle::Arrival(Vector2 _target) {
 	Vector2 desired = desired.sub(_target, position);
 	float distance = desired.Mag(desired);
-	//loat var = distance / 100;
 	if (distance < 100) {
 		desired = desired.normalize(desired);
-		desired = desired.mult(desired, maxSpeed);
-		desired = desired.mult(desired, distance/100);
+		desired = desired.mult(desired, int(maxSpeed));
+		desired = desired.mult(desired, int(distance / 100));
 	}
-	else{
+	else {
 		desired = desired.normalize(desired);
 		desired = desired.mult(desired, maxSpeed);
-		//steer = steer.sub(desired, velocity);
 	}
-	
 	Vector2 steer = steer.sub(desired, velocity);
 	ApplyForce(steer);
 
 }
 
-void Vehicle::ApplyForce(Vector2 v) {
+void Vehicle::Pursuit(Vehicle target) {
+	float distance = Distance(target.GetPos(), position);	
+	float ahead = distance / 10;
+	Vector2 futurePosition = velocity;
+	futurePosition = futurePosition.normalize(futurePosition);
+	futurePosition = futurePosition.add(target.GetPos(), target.GetVel());
+	futurePosition = futurePosition.mult(futurePosition, ahead);
+	Seek(target.GetPos());
+}
+
+void Vehicle::ApplyForce (Vector2 v) {
 	acceleration = acceleration.add(v, acceleration);
+}
+
+Vector2 Vehicle::GetPos() {
+	return position;
+}
+
+Vector2 Vehicle::GetVel() {
+	return velocity;
 }
 
 void Vehicle::Update() {
@@ -60,6 +75,12 @@ void Vehicle::Update() {
 	//velocity = velocity.limit(maxSpeed);
 	position = position.add(position, velocity);
 	acceleration = acceleration.mult(acceleration, 0);
+}
+
+float Vehicle::Distance(Vector2 v1, Vector2 v2) {
+	float resultado;
+	resultado = sqrt(((v2.GetPosX() - v1.GetPosX()) * (v2.GetPosX() - v1.GetPosX()) + ((v2.GetPosY() - v1.GetPosY()) * v2.GetPosY() - v1.GetPosY())));
+	return resultado;
 }
 
 void Vehicle::Draw() {

@@ -17,6 +17,7 @@ class Vector2 {
 		Vector2 limit(Vector2 v, int n);
 		Vector2 setMag(float n);
 		float Mag(Vector2 v);
+		float Distance(Vector2 v1, Vector2 v2);
 		float GetPosX();
 		float GetPosY();
 		~Vector2(){ }

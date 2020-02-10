@@ -57,6 +57,12 @@ float Vector2::Mag(Vector2 v) {
 	return result;*/
 }
 
+float Vector2::Distance(Vector2 v1, Vector2 v2) {
+	float resultado;
+	resultado = sqrt(((v2.x - v1.x) * (v2.x - v1.x)) + ((v2.y - v1.y) * v2.y - v1.y));
+	return resultado;
+}
+
 float Vector2::GetPosX() {
 	return x;
 }

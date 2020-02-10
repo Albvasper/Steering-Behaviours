@@ -26,5 +26,6 @@ class Platform {
 		void CheckEvent(GameState* obj, bool (GameState::* f)(int));	//Method that always checks the events that are happening
 		int GetMouseX();
 		int GetMouseY();
+		void DrawLine(float x, float y, float x1, float y1, int R, int B, int G);
 		~Platform();													//Destructor
 };

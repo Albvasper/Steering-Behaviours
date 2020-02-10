@@ -5,6 +5,7 @@
 #include "Sprite.h"
 #include "Platform.h"
 #include <math.h>
+#include "SDL.h"
 
 class Vehicle : GameObject {
 

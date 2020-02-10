@@ -55,6 +55,7 @@ void Vehicle::Pursuit(Vehicle target) {
 	futurePosition = futurePosition.normalize(futurePosition);
 	futurePosition = futurePosition.add(target.GetPos(), target.GetVel());
 	futurePosition = futurePosition.mult(futurePosition, ahead);
+	
 	Seek(target.GetPos());
 }
 

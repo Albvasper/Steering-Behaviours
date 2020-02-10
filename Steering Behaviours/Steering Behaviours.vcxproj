@@ -24,6 +24,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Stack.h" />

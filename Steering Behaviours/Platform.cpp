@@ -85,3 +85,9 @@ int Platform::GetMouseY() {
 
 Platform::~Platform() {
 }
+
+void  Platform::DrawLine(float x, float y, float x1, float y1, int R, int B, int G)
+{
+	SDL_SetRenderDrawColor(renderer, R, G, B, 0xff);
+	SDL_RenderDrawLine(renderer, x, y, x1, y1);
+}

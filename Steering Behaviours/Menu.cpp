@@ -19,6 +19,7 @@ void Menu::Draw() {
 	platform->RenderClear();
 	agent->Draw();
 	agentP->Draw();
+	/*platform->DrawLine(0,0, i+i,i*i,0xff,0xff,0x00);*/
 	platform->RenderPresent();
 }
 

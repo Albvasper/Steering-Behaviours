@@ -14,7 +14,6 @@ class Menu : public GameState {
 		GameStateManager* manager;												//Pointer to the manager
 		Vehicle* agent;
 		Target* target;
-		//Vector2 target;
 
 	public:
 		Menu();																	//Constructor

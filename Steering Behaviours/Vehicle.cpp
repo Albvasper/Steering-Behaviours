@@ -23,8 +23,12 @@ void Vehicle::Seek(Vector2 _target) {
 	ApplyForce(steer);
 }
 
-void Vehicle::Evading(Vector2 _target) {
-	
+void Vehicle::Flee(Vector2 _target) {
+	Vector2 desired = desired.sub(position, _target);
+	desired = desired.normalize(desired);
+	desired = desired.mult(desired, maxSpeed);
+	Vector2 steer = steer.sub(desired, velocity);
+	ApplyForce(steer);
 }
 
 void Vehicle::ApplyForce(Vector2 v) {

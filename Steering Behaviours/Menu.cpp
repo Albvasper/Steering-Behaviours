@@ -33,7 +33,7 @@ bool Menu::Input(int keyInput) {
 
 void Menu::Update() {
 	agent->Update();
-	agent->Seek(target->GetPos());
+	agent->Flee(target->GetPos());
 	target->Update();
 }
 

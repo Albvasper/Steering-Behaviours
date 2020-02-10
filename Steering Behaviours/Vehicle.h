@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include "Sprite.h"
 #include "Platform.h"
+#include <math.h>
 
 class Vehicle : GameObject {
 
@@ -32,7 +33,7 @@ class Vehicle : GameObject {
 		Vehicle();
 		void Init(float x, float y, Platform* _platform);
 		void Seek(Vector2 _target);
-		void Evading(Vector2 _target);
+		void Flee(Vector2 _target);
 		void ApplyForce(Vector2 v);
 		void Update();
 		void Draw();

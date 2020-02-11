@@ -18,7 +18,7 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 void Menu::Draw() {
 	platform->RenderClear();
 	agent->Draw();
-	agentP->Draw();
+	//agentP->Draw();
 	/*platform->DrawLine(0,0, i+i,i*i,0xff,0xff,0x00);*/
 	platform->RenderPresent();
 }
@@ -37,9 +37,9 @@ bool Menu::Input(int keyInput) {
 
 void Menu::Update() {
 	agent->Update();
-	agent->Arrival(target->GetPos());
-	agentP->Update();
-	agentP->Evade(*agent);
+	agent->Seek(agent->PathFollowing());
+	/*agentP->Update();
+	agentP->Pursuit(*agent);*/
 	target->Update();
 }
 

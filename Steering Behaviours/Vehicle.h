@@ -6,6 +6,7 @@
 #include "Platform.h"
 #include <math.h>
 #include "SDL.h"
+#include "Path.h"
 
 class Vehicle : GameObject {
 
@@ -29,6 +30,9 @@ class Vehicle : GameObject {
 		int targetY;
 		Platform* platform;
 		Sprite* sprite;
+		Path* path;
+		int currentPoint;
+		int pathDir;
 
 	public:
 		Vehicle();
@@ -38,6 +42,7 @@ class Vehicle : GameObject {
 		void Arrival(Vector2 _target);
 		void Pursuit(Vehicle target);
 		void Evade(Vehicle target);
+		Vector2 PathFollowing();
 		float Distance(Vector2 v1, Vector2 v2);
 		void ApplyForce(Vector2 v);
 		Vector2 GetPos();

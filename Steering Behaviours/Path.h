@@ -10,6 +10,9 @@ class Path {
 
 	public:
 		Path();
+		void AddPoint(Vector2 vector);
+		std::vector<Vector2> GetPoints();
+		float GetRadius();
 		~Path();
 };
 

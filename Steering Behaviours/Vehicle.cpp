@@ -13,6 +13,7 @@ void Vehicle::Init(float x, float y, Platform* _platform) {
 	r = 6;
 	maxSpeed = 4;
 	maxForce = 2;
+	pathDir = 1;
 }
 
 void Vehicle::Seek(Vector2 _target) {
@@ -50,23 +51,41 @@ void Vehicle::Arrival(Vector2 _target) {
 
 void Vehicle::Pursuit(Vehicle target) {
 	float distance = Distance(target.GetPos(), position);	
-	float ahead = distance / 10;
-	Vector2 futurePosition = velocity;
-	futurePosition = futurePosition.normalize(futurePosition);
+	float ahead = distance / maxSpeed;
+	Vector2 futurePosition;
 	futurePosition = futurePosition.add(target.GetPos(), target.GetVel());
-	futurePosition = futurePosition.mult(futurePosition, ahead);
-	
-	Seek(target.GetPos());
+	futurePosition = futurePosition.mult(futurePosition, int(ahead));
+	Seek(futurePosition);
 }
 
 void Vehicle::Evade(Vehicle target) {
 	float distance = Distance(target.GetPos(), position);
 	float ahead = distance / 10;
 	Vector2 futurePosition = velocity;
-	futurePosition = futurePosition.normalize(futurePosition);
 	futurePosition = futurePosition.add(target.GetPos(), target.GetVel());
 	futurePosition = futurePosition.mult(futurePosition, ahead);
-	Flee(target.GetPos());
+	Flee(futurePosition);
+}
+
+Vector2 Vehicle::PathFollowing() {
+	path = new Path();
+	path->AddPoint(Vector2(50, 500));
+	path->AddPoint(Vector2(400, 100));
+	path->AddPoint(Vector2(800, 800));
+	path->AddPoint(Vector2(1200, 600));
+	Vector2 target;
+	if (path != nullptr) {
+		std::vector<Vector2> points = path->GetPoints();
+		target = points[currentPoint];
+		if (Distance(position, target) <= path->GetRadius()) {
+			currentPoint += pathDir;
+			if (currentPoint >= points.size() || currentPoint < 0) {
+				pathDir *= -1;
+				currentPoint += pathDir;
+			}
+		}
+	}
+	return target;
 }
 
 void Vehicle::ApplyForce (Vector2 v) {

@@ -36,9 +36,9 @@ void Vehicle::Arrival(Vector2 _target) {
 	Vector2 desired = desired.sub(_target, position);
 	float distance = desired.Mag(desired);
 	if (distance < 100) {
-		desired = desired.normalize(desired);
-		desired = desired.mult(desired, int(maxSpeed));
-		desired = desired.mult(desired, int(distance / 100));
+ 		Vector2 vec(desired.GetPosX() * maxSpeed * (distance / 100), desired.GetPosY() * maxSpeed * (distance / 100));
+		velocity = vec;
+		position = Vector2(position.GetPosX() + velocity.GetPosX(), position.GetPosY() + velocity.GetPosY());
 	}
 	else {
 		desired = desired.normalize(desired);
@@ -46,7 +46,6 @@ void Vehicle::Arrival(Vector2 _target) {
 	}
 	Vector2 steer = steer.sub(desired, velocity);
 	ApplyForce(steer);
-
 }
 
 void Vehicle::Pursuit(Vehicle target) {
@@ -86,6 +85,17 @@ Vector2 Vehicle::PathFollowing() {
 		}
 	}
 	return target;
+}
+
+void Vehicle::Interpose(Vehicle* v1, Vehicle* v2) {
+	Vector2 v1Future = v1Future.add(v1->GetPos(), v1->GetVel());
+	Vector2 v2Future = v1Future.add(v2->GetPos(), v2->GetVel());
+	v1Future = v1Future.mult(v1Future, 1.5f);
+	v2Future = v2Future.mult(v2Future, 1.5f);
+	float ekis = (v1Future.GetPosX() + v2Future.GetPosX()) / 2;
+	float ye = (v1Future.GetPosY() + v2Future.GetPosY()) / 2;
+	Vector2 mid = Vector2(ekis, ye);
+	Seek(mid);
 }
 
 void Vehicle::ApplyForce (Vector2 v) {

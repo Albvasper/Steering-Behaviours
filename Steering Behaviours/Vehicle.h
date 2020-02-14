@@ -43,6 +43,7 @@ class Vehicle : GameObject {
 		void Pursuit(Vehicle target);
 		void Evade(Vehicle target);
 		Vector2 PathFollowing();
+		void Interpose(Vehicle* v1, Vehicle* v2);
 		float Distance(Vector2 v1, Vector2 v2);
 		void ApplyForce(Vector2 v);
 		Vector2 GetPos();

@@ -37,9 +37,9 @@ bool Menu::Input(int keyInput) {
 
 void Menu::Update() {
 	agent->Update();
-	agent->Seek(agent->PathFollowing());
-	/*agentP->Update();
-	agentP->Pursuit(*agent);*/
+	agent->Arrival(target->GetPos());
+	agentP->Update();
+	agentP->Pursuit(*agent);
 	target->Update();
 }
 
